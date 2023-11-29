@@ -26,7 +26,7 @@ public class Notifikasi {
 
     public void pemberitahuan(){
         Date now = new Date();
-        if(this.calculateDuration() ==1){
+        if(this.calculateDuration() ==1 && !this.buku.isIsAvailable()){
             System.out.println("[PESAN MASUK]");
             System.out.println("Penerima: " + this.anggota.getNama());
             System.out.println("No Telepon : " + this.anggota.getNo_telpon());
