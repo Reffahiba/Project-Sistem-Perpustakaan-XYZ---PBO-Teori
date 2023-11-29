@@ -89,7 +89,7 @@ public class Admin {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         ArrayList<Buku> bukuang = ap.getBuku();
         System.out.println("Histori Aktivitas:");
-        System.out.format("%-15s %-15s %-15s %-15s %-50s%n", "ID Transaksi", "Tanggal Awal", "Tanggal Akhir", "Peminjam", "Buku");
+        System.out.format("%-15s %-15s %-15s %-15s %-15s%n", "ID Transaksi", "Tanggal Awal", "Tanggal Akhir", "Peminjam", "Buku");
         for (TransaksiPeminjaman tp : transaksi_peminjaman) {
             System.out.format("%-15s %-15s %-15s %-50s ", tp.getId_transaksi(), dateFormat.format(tp.getTanggal_awal()), dateFormat.format(tp.getTanggal_akhir()), tp.getAnggota().getNama());
             for (Buku daftarBuku : bukuang) {
