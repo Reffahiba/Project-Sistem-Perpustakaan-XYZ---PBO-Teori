@@ -1,25 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package classdiagrampbo;
-
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
-
-/**
- *
- * @author ACER
- */
 public class Notifikasi {
     private TransaksiPeminjaman transaksi;
     private AnggotaPerpustakaan anggota;
     private String pemberitahuan;
     private Date waktu;
+    private Buku buku;
 
-    public Notifikasi(TransaksiPeminjaman transaksi, AnggotaPerpustakaan anggota) {
+    public Notifikasi(TransaksiPeminjaman transaksi, AnggotaPerpustakaan anggota, Buku buku) {
         this.transaksi = transaksi;
 	this.anggota = anggota;
+	this.buku = buku;
     }
 
     public int calculateDuration() {
@@ -38,9 +27,8 @@ public class Notifikasi {
             System.out.println("No Telepon : " + this.anggota.getNo_telpon());
             System.out.println("Pesan: \nBatas peminjaman buku " + this.buku.getJudul() +  " tinggal " + this.calculateDuration() + " hari");
             System.out.println("anda dapat mengembalikan buku tersebut dalam 1x24 jam kedepan");
- }else if(this.calculateDuration() < 0){
+	}else if(this.calculateDuration() < 0){
             System.out.println("Kena Denda");
         }
     }
 }
-
