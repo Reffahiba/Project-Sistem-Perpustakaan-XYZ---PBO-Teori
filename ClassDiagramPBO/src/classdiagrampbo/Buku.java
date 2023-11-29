@@ -15,14 +15,6 @@ public class Buku {
     private String genre;
     private boolean isAvailable;
 
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
     public Buku(String judul, String pengarang, String no_isbn, String genre, boolean isAvailable) {
         this.judul = judul;
         this.pengarang = pengarang;
@@ -59,6 +51,14 @@ public class Buku {
         return no_isbn;
     }
 
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+    
     public boolean isIsAvailable() {
         return isAvailable;
     } 
