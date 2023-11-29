@@ -91,7 +91,7 @@ public class Admin {
         System.out.println("Histori Aktivitas:");
         System.out.format("%-15s %-15s %-15s %-15s %-15s%n", "ID Transaksi", "Tanggal Awal", "Tanggal Akhir", "Peminjam", "Buku");
         for (TransaksiPeminjaman tp : transaksi_peminjaman) {
-            System.out.format("%-15s %-15s %-15s %-50s ", tp.getId_transaksi(), dateFormat.format(tp.getTanggal_awal()), dateFormat.format(tp.getTanggal_akhir()), tp.getAnggota().getNama());
+            System.out.format("%-15s %-15s %-15s %-15s ", tp.getId_transaksi(), dateFormat.format(tp.getTanggal_awal()), dateFormat.format(tp.getTanggal_akhir()), tp.getAnggota().getNama());
             for (Buku daftarBuku : bukuang) {
                 System.out.print(daftarBuku.getJudul() + ", ");
             }
