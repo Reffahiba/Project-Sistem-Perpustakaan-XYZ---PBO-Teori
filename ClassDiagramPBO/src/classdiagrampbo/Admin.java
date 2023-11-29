@@ -1,15 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package classdiagrampbo;
-
 import java.util.ArrayList;
-
-/**
- *
- * @author ACER
- */
 public class Admin {
     private ArrayList<AnggotaPerpustakaan> anggota = new ArrayList<>();
     private ArrayList<Buku> daftarBuku = new ArrayList<>();
@@ -18,8 +7,9 @@ public class Admin {
     private String id_admin;
     private String name_admin;
 
-    public void addAnggota(AnggotaPerpustakaan anggota) {
-        this.anggota.add(anggota);
+    public Admin(String id_admin, String name_admin) {
+        this.id_admin = id_admin;
+        this.name_admin = name_admin;
     }
 
     public void setTransaksi_peminjaman(TransaksiPeminjaman transaksi_peminjaman) {
@@ -37,16 +27,7 @@ public class Admin {
     public void setName_admin(String name_admin) {
         this.name_admin = name_admin;
     }
-
-    public Admin(String id_admin, String name_admin) {
-        this.id_admin = id_admin;
-        this.name_admin = name_admin;
-    }
     
-    public void addBuku(Buku buku){
-        daftarBuku.add(buku);
-    }
-
     public ArrayList<AnggotaPerpustakaan> getAnggota() {
         return anggota;
     }
@@ -69,5 +50,36 @@ public class Admin {
 
     public String getName_admin() {
         return name_admin;
+    }
+    
+    public void addAnggota(AnggotaPerpustakaan anggota) {
+        this.anggota.add(anggota);
+    }
+    
+    public void addBuku(Buku buku){
+        daftarBuku.add(buku);
+    }
+    
+    public void displayAnggota(){
+        ArrayList<AnggotaPerpustakaan> ap = this.getAnggota();
+        System.out.println("Nama-nama anggota perpustakaan:");
+        for(AnggotaPerpustakaan i : ap){
+            System.out.println("ID Anggota  : " + i.getId_anggota());
+            System.out.println("Nama Anggota  : " + i.getNama());
+            System.out.println("No. Telpon  : " + i.getNo_telpon());
+            System.out.println("-----------------------");
+        }
+    }
+    
+    public void displayBuku(){
+        ArrayList<Buku> bk = this.getDaftarBuku();
+        System.out.println("\nBuku-buku yang tersedia:");
+        for(Buku j : bk){
+            System.out.println("No. ISBN  : " + j.getNo_isbn());
+            System.out.println("Judul Buku   : " + j.getJudul());
+            System.out.println("Genre Buku  : " + j.getGenre());
+            System.out.println("Nama Pengarang  : " + j.getPengarang());
+            System.out.println("-----------------------");
+        }
     }
 }
