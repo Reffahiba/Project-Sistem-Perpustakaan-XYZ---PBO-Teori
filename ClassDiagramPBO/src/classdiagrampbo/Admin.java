@@ -81,7 +81,7 @@ public class Admin {
             System.out.println("Judul Buku   : " + j.getJudul());
             System.out.println("Genre Buku  : " + j.getGenre());
             System.out.println("Nama Pengarang  : " + j.getPengarang());
-            System.out.println("Tersedia " + (j.isIsAvailable() ? "Ada" : "Tidak Ada") );
+            System.out.println("Status    : " + (j.isIsAvailable() ? "Ada" : "Tidak Ada") );
             System.out.println("-----------------------");
         }
     }
