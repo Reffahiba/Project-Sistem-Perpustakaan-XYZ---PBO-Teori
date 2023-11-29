@@ -17,8 +17,9 @@ public class Notifikasi {
     private String pemberitahuan;
     private Date waktu;
 
-    public Notifikasi(TransaksiPeminjaman transaksi) {
+    public Notifikasi(TransaksiPeminjaman transaksi, AnggotaPerpustakaan anggota) {
         this.transaksi = transaksi;
+	this.anggota = anggota;
     }
 
     public int calculateDuration() {
@@ -29,13 +30,17 @@ public class Notifikasi {
         return durasi;
     }
 
-    
     public void pemberitahuan(){
         Date now = new Date();
         if(this.calculateDuration() ==1){
-            System.out.println("Batas peminjaman Anda tinggal " + this.calculateDuration() + " Hari");
-        }else if(this.calculateDuration() < 0){
+            System.out.println("[PESAN MASUK]");
+            System.out.println("Penerima: " + this.anggota.getNama());
+            System.out.println("No Telepon : " + this.anggota.getNo_telpon());
+            System.out.println("Pesan: \nBatas peminjaman buku " + this.buku.getJudul() +  " tinggal " + this.calculateDuration() + " hari");
+            System.out.println("anda dapat mengembalikan buku tersebut dalam 1x24 jam kedepan");
+ }else if(this.calculateDuration() < 0){
             System.out.println("Kena Denda");
         }
     }
 }
+
