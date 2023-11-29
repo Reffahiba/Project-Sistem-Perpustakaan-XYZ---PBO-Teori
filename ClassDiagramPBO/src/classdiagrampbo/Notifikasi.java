@@ -1,3 +1,8 @@
+package classdiagrampbo;
+
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
 public class Notifikasi {
     private TransaksiPeminjaman transaksi;
     private AnggotaPerpustakaan anggota;
